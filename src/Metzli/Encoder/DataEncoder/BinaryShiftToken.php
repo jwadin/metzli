@@ -25,7 +25,7 @@ class BinaryShiftToken extends Token
     private $shiftStart;
     private $shiftByteCount;
 
-    public function __construct(Token $previous = null, $totalBitCount, $shiftStart, $shiftByteCount)
+    public function __construct(?Token $previous, $totalBitCount, $shiftStart, $shiftByteCount)
     {
         parent::__construct($previous, $totalBitCount);
         $this->shiftStart = $shiftStart;

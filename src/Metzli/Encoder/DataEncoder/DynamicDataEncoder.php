@@ -38,8 +38,8 @@ class DynamicDataEncoder implements DataEncoderInterface
         for ($index = 0; $index < count($text); $index++) {
             $nextChar = (($index + 1 < count($text)) ? $text[$index + 1] : '');
             switch ($text[$index]) {
-                case '\r':
-                    $pairCode = (($nextChar == '\n') ? 2 : 0);
+                case "\r":
+                    $pairCode = (($nextChar == "\n") ? 2 : 0);
                     break;
                 case '.':
                     $pairCode = (($nextChar == ' ') ? 3 : 0);
@@ -252,16 +252,16 @@ class DynamicDataEncoder implements DataEncoderInterface
             self::$charMap[self::MODE_DIGIT][ord('.')] = 13;
 
             $mixedTable = array(
-                '\0', ' ', '\1', '\2', '\3', '\4', '\5', '\6', '\7', '\b', '\t', '\n',
-                '\13', '\f', '\r', '\33', '\34', '\35', '\36', '\37', '@', '\\', '^',
-                '_', '`', '|', '~', '\177',
+                "\0", ' ', "\1", "\2", "\3", "\4", "\5", "\6", "\7", "\x08", "\t", "\n",
+                "\13", "\f", "\r", "\33", "\34", "\35", "\36", "\37", '@', '\\', '^',
+                '_', '`', '|', '~', "\177",
             );
             for ($i = 0; $i < count($mixedTable); $i++) {
                 self::$charMap[self::MODE_MIXED][ord($mixedTable[$i])] = $i;
             }
 
             $punctTable = array(
-                '\0', '\r', '\0', '\0', '\0', '\0', '!', '\'', '#', '$', '%', '&', '\'',
+                "\0", "\r", "\0", "\0", "\0", "\0", '!', '\'', '#', '$', '%', '&', '\'',
                 '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?',
                 '[', ']', '{', '}',
             );

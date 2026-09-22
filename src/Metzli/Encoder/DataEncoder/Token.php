@@ -25,7 +25,7 @@ abstract class Token
     private $previous;
     private $totalBitCount;
 
-    public function __construct(Token $previous = null, $totalBitCount)
+    public function __construct(?Token $previous, $totalBitCount)
     {
         $this->previous = $previous;
         $this->totalBitCount = $totalBitCount;

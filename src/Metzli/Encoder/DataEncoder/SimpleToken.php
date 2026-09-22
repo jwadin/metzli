@@ -25,7 +25,7 @@ class SimpleToken extends Token
     private $value;
     private $bitCount;
 
-    public function __construct(Token $previous = null, $totalBitCount, $value, $bitCount)
+    public function __construct(?Token $previous, $totalBitCount, $value, $bitCount)
     {
         parent::__construct($previous, $totalBitCount);
         $this->value = $value;
