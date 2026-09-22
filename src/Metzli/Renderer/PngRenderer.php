@@ -73,7 +73,6 @@ class PngRenderer implements RendererInterface
         ob_start();
         imagepng($im);
         $result = ob_get_clean();
-        imagedestroy($im);
 
         return $result;
     }
